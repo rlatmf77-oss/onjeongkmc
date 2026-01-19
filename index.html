@@ -282,10 +282,47 @@ nav a:hover{color:var(--primary);}
     margin-bottom:50px;
 }
 .map-container{
-    width:100%;max-width:1000px;height:500px;
-    margin:0 auto;border-radius:15px;
-    overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,.1);
+    width:100%;
+    max-width:800px;   /* ⬅ 가로 줄이기 */
+    height:380px;      /* ⬅ 세로 줄이기 */
+    margin:0 auto;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
+
+/* 모바일 */
+@media(max-width:768px){
+    .map-container{
+        height:260px;  /* ⬅ 모바일에서 더 작게 */
+    }
+}
+
+.map-link {
+    position: relative;
+    cursor: pointer;
+}
+
+.map-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(58, 99, 81, 0.9);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    pointer-events: none;
+}
+
 .info-box{
     margin-top:40px;
     display:flex;gap:40px;
@@ -458,20 +495,16 @@ footer{
 
 <section id="location" class="location-section">
     <h2 class="reveal">오시는 길</h2>
-    <div class="map-container reveal">
-    <!-- PC용 지도 (iframe) -->
-    <iframe
-        src="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
-        style="width:100%;height:100%;border:0;">
-    </iframe>
-
-    <!-- 모바일용 버튼 -->
-    <a class="map-button"
-       href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
-       target="_blank">
-        📍 네이버 지도에서 위치 보기
+ <div class="map-container reveal map-link">
+    <a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
+       target="_blank" aria-label="네이버 지도에서 온정 한의원 보기">
+        <img src="map.png" alt="온정 한의원 위치 지도">
+        <div class="map-overlay">
+            📍 지도를 눌러 네이버 지도에서 보기
+        </div>
     </a>
 </div>
+
 
 
     <div class="info-box reveal">
