@@ -414,6 +414,9 @@ footer{
 <!-- 🔹 진료 항목 (위로 이동됨) -->
 <section id="services" class="services">
     <h2 class="reveal">진료 항목</h2>
+    <p class="treatment-guide">
+        ※ 항목을 클릭하시면 자세한 설명이 있는 블로그로 이동합니다
+    </p>
     <div class="service-grid reveal">
         <a class="service-item" target="_blank" href="https://blog.naver.com/onjungkmc/223833978941">
             교통사고 후유증<span>자동차보험 · 추나</span>
@@ -455,10 +458,21 @@ footer{
 
 <section id="location" class="location-section">
     <h2 class="reveal">오시는 길</h2>
-    <div class="map-container reveal">
-        <iframe src="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
-            style="width:100%;height:100%;border:0;"></iframe>
-    </div>
+   <div class="map-container reveal">
+    <!-- PC용 지도 (iframe) -->
+    <iframe
+        src="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
+        style="width:100%;height:100%;border:0;">
+    </iframe>
+
+    <!-- 모바일용 버튼 -->
+    <a class="map-button"
+       href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%84%9C%EC%9E%AC%EB%A1%9C%202"
+       target="_blank">
+        📍 네이버 지도에서 위치 보기
+    </a>
+</div>
+
 
     <div class="info-box reveal">
         <div class="info-item">
@@ -516,3 +530,4 @@ function prevSlide(){
 
 </body>
 </html>
+
